@@ -1,379 +1,80 @@
 /*
-
 Rock Paper Scissors Lizzard Spock
-
 (The Big Bang Theory)
-
 */
 
 #include <stdlib.h>
-
 #include
 
+int start();
+int printWinner();
+int user();
+int computer();
+
 int main() {
+	std::cout << "========================\n";
+	std::cout << "rock paper scissors lizzard spock!\n";
+	std::cout << "========================\n\n";
 
-srand (time(NULL));
+	srand (time(NULL));
 
-int computer = rand() % 3 + 1;
+	int moves[5] = {"Rock\n",""Paper\n",""Scissors\n",""Lizard\n",""Spock\n"};
 
-int user = 0;
+	// Live long and prosper
 
-// Live long and prosper
+	int user = user(moves);
 
-std::cout << “========================\n”;
+	int computer = computer(moves);
 
-std::cout << “rock paper scissors lizzard spock!\n”;
-
-std::cout << “========================\n”;
-
-std::cout << “1) Rock\n”;
-
-std::cout << “2) Paper\n”;
-
-std::cout << “3) Scissors\n”;
-
-std::cout << “4) Lizzard\n”;
-
-std::cout << “5) Spock\n”;
-
-std::cout << "shoot! ";
-
-std::cin >> user;
-
-if (user == 1)
-
-{
-
-std::cout << “Rock\n”;
-
+	printWinner(user, computer);
 }
 
-if (user == 2)
+int user(char *moves[5]) {
+	std::cout << "1) Rock\n";
+	std::cout << "2) Paper\n";
+	std::cout << "3) Scissors\n";
+	std::cout << "4) Lizzard\n";
+	std::cout << "5) Spock\n";
+	std::cout << "shoot! ";
 
-{
+	std::cout << "========================\n";
+	std::cout<< computer;
+	std::cout << "========================\n";
 
-std::cout << “Paper\n”;
+	std::cout << moves[computer];
 
+	return rand() % 3;
 }
 
-if (user == 3)
+int computer(char *moves[5]) {
+	std::cout << "========================\n";
+	std::cout<< computer;
+	std::cout << "========================\n";
 
-{
+	std::cout << moves[computer];
 
-std::cout << “Scissors\n”;
-
+	return rand() % 3;
 }
 
-if (user == 4)
+int printWinner(int user, int computer) {
+	outcomes = [[  0, -1,  1,  1, -1 ],
 
-{
+                [  1,  0, -1, -1,  1 ],
 
-std::cout << “Lizzard\n”;
+                [ -1,  1,  0,  1, -1 ],
 
-}
+                [ -1,  1, -1,  0,  1 ],
 
-if (user == 5)
+                [  1, -1,  1, -1,  0 ]];
 
-{
 
-std::cout << “Spock\n”;
-
-}
-
-std::cout << “========================\n”;
-
-std::cout<< computer;
-
-std::cout << “========================\n”;
-
-if (computer == 1)
-
-{
-
-std::cout << “Rock\n”;
-
-}
-
-if (computer == 2)
-
-{
-
-std::cout << “Paper\n”;
-
-}
-
-if (computer == 3)
-
-{
-
-std::cout << “Scissors\n”;
-
-}
-
-if (computer == 4)
-
-{
-
-std::cout << “Lizzard\n”;
-
-}
-
-if (computer == 5)
-
-{
-
-std::cout << “Spock\n”;
-
-}
-
-//Rock vs Paper
-
-if (user == 1 && computer == 2)
-
-{
-
-std::cout << “Computer Wins”;
-
-}
-
-else if (user == 2 && computer == 1)
-
-{
-
-std::cout << “You Win”;
-
-}
-
-else if (user == 2 && computer == 2)
-
-{
-
-std::cout << “Tie”;
-
-}
-
-else if (user == 1 && computer == 1)
-
-{
-
-std::cout << “Tie”;
-
-}
-
-//Rock vs Scissors
-
-if (user == 3 && computer == 1)
-
-{
-
-std::cout << “Computer Wins”;
-
-}
-
-else if (user == 1 && computer == 3)
-
-{
-
-std::cout << “You Win”;
-
-}
-
-else if (user == 3 && computer == 3)
-
-{
-
-std::cout << “Tie”;
-
-}
-
-else if (user == 1 && computer == 1)
-
-{
-
-std::cout << “Tie”;
-
-}
-
-//Paper vs Scissors
-
-if (user == 2 && computer == 3)
-
-{
-
-std::cout << “Computer Wins”;
-
-}
-
-else if (user == 3 && computer == 2)
-
-{
-
-std::cout << “You Win”;
-
-}
-
-else if (user == 3 && computer == 3)
-
-{
-
-std::cout << “Tie”;
-
-}
-
-else if (user == 2 && computer == 2)
-
-{
-
-std::cout << “Tie”;
-
-}
-
-//Lizard
-
-if (user == 4 && computer == 1)
-
-{
-
-std::cout << “Computer Wins”;
-
-}
-
-else if (user == 4 && computer == 4)
-
-{
-
-std::cout << “Tie”;
-
-}
-
-else if (user == 4 && computer == 3)
-
-{
-
-std::cout << “Computer Wins”;
-
-}
-
-else if (user == 4 && computer == 2)
-
-{
-
-std::cout << “You Win”;
-
-}
-
-else if (user == 2 && computer == 4)
-
-{
-
-std::cout << “Computer Wins”;
-
-}
-
-if (user == 4 && computer == 5)
-
-{
-
-std::cout << “You win”;
-
-}
-
-if (user == 1 && computer == 4)
-
-{
-
-std::cout << “You win”;
-
-}
-
-else if (user == 3 && computer == 4)
-
-{
-
-std::cout << “You win”;
-
-}
-
-else if (user == 2 && computer == 4)
-
-{
-
-std::cout << “Computer wins”;
-
-}
-
-else if (user == 4 && computer == 2)
-
-{
-
-std::cout << “You win”;
-
-}
-
-if (user == 5 && computer == 4)
-
-{
-
-std::cout << “Computer win”;
-
-}
-
-//Spock
-
-if (user == 5 && computer == 4)
-
-{
-
-std::cout << “Computer Wins”;
-
-}
-
-else if (user == 5 && computer == 3)
-
-{
-
-std::cout << “You Win”;
-
-}
-
-else if (user == 5 && computer == 2)
-
-{
-
-std::cout << “Computer Wins”;
-
-}
-
-else if (user == 5 && computer == 1)
-
-{
-
-std::cout << “You win”;
-
-}
-
-else if (user == 3 && computer == 5)
-
-{
-
-std::cout << “Computer Wins”;
-
-}
-
-else if (user == 2 && computer == 5)
-
-{
-
-std::cout << “You win”;
-
-}
-
-else if (user == 1 && computer == 5)
-
-{
-
-std::cout << “Computer Wins”;
-
-}
-
+	if (outcomes[user][computer] == 1) {
+		std::cout << "You Win";
+	}
+	else if (outcomes[user][computer] == -1) {
+		std::cout << "Computer Wins";
+	}
+	else {
+		std::cout << "Tie";
+	}
 }
