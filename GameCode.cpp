@@ -4,7 +4,7 @@ Rock Paper Scissors Lizzard Spock
 */
 
 #include <stdlib.h>
-#include
+#include <iostream>
 
 int start();
 int printWinner();
@@ -18,7 +18,7 @@ int main() {
 
 	srand (time(NULL));
 
-	int moves[5] = {"Rock\n",""Paper\n",""Scissors\n",""Lizard\n",""Spock\n"};
+	int moves[5] = {"Rock\n","Paper\n","Scissors\n","Lizard\n","Spock\n"};
 
 	// Live long and prosper
 
